@@ -2689,11 +2689,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\DATN2024\\WorkMateBE\\WorkMateBE\\WorkMateBE.csproj",
+      "projectUniqueName": "D:\\WorkMate\\WorkMateBE\\WorkMateBE\\WorkMateBE.csproj",
       "projectName": "WorkMateBE",
-      "projectPath": "D:\\DATN2024\\WorkMateBE\\WorkMateBE\\WorkMateBE.csproj",
+      "projectPath": "D:\\WorkMate\\WorkMateBE\\WorkMateBE\\WorkMateBE.csproj",
       "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-      "outputPath": "D:\\DATN2024\\WorkMateBE\\WorkMateBE\\obj\\",
+      "outputPath": "D:\\WorkMate\\WorkMateBE\\WorkMateBE\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",

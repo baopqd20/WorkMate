@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ugz7ZHgHKFM=",
+  "dgSpecHash": "qbK/RvZAOo4=",
   "success": true,
-  "projectFilePath": "D:\\DATN2024\\WorkMateBE\\WorkMateBE\\WorkMateBE.csproj",
+  "projectFilePath": "D:\\WorkMate\\WorkMateBE\\WorkMateBE\\WorkMateBE.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ADMIN\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",

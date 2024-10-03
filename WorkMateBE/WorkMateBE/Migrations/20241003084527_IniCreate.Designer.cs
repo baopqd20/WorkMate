@@ -11,7 +11,7 @@ using WorkMateBE.Data;
 namespace WorkMateBE.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20241002070550_IniCreate")]
+    [Migration("20241003084527_IniCreate")]
     partial class IniCreate
     {
         /// <inheritdoc />
@@ -59,6 +59,8 @@ namespace WorkMateBE.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("EmployeeId");
+
                     b.ToTable("Accounts");
                 });
 
@@ -68,15 +70,15 @@ namespace WorkMateBE.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("AssignTo")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("longtext");
+
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Location")
                         .IsRequired()
@@ -90,6 +92,8 @@ namespace WorkMateBE.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("EmployeeId");
 
                     b.ToTable("Assets");
                 });
@@ -121,6 +125,8 @@ namespace WorkMateBE.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("EmployeeId");
+
                     b.ToTable("Attendances");
                 });
 
@@ -141,7 +147,7 @@ namespace WorkMateBE.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int>("status")
+                    b.Property<int>("Status")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -186,6 +192,8 @@ namespace WorkMateBE.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("DepartmentId");
+
                     b.ToTable("Employees");
                 });
 
@@ -201,6 +209,9 @@ namespace WorkMateBE.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime(6)");
 
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Reason")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -209,6 +220,8 @@ namespace WorkMateBE.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("EmployeeId");
 
                     b.ToTable("LeaveRequests");
                 });
@@ -248,7 +261,75 @@ namespace WorkMateBE.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("EmployeeId");
+
                     b.ToTable("Salaries");
+                });
+
+            modelBuilder.Entity("WorkMateBE.Models.Account", b =>
+                {
+                    b.HasOne("WorkMateBE.Models.Employee", "Employee")
+                        .WithMany()
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Employee");
+                });
+
+            modelBuilder.Entity("WorkMateBE.Models.Asset", b =>
+                {
+                    b.HasOne("WorkMateBE.Models.Employee", "Employee")
+                        .WithMany()
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Employee");
+                });
+
+            modelBuilder.Entity("WorkMateBE.Models.Attendance", b =>
+                {
+                    b.HasOne("WorkMateBE.Models.Employee", "Employee")
+                        .WithMany()
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Employee");
+                });
+
+            modelBuilder.Entity("WorkMateBE.Models.Employee", b =>
+                {
+                    b.HasOne("WorkMateBE.Models.Department", "Department")
+                        .WithMany()
+                        .HasForeignKey("DepartmentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Department");
+                });
+
+            modelBuilder.Entity("WorkMateBE.Models.LeaveRequest", b =>
+                {
+                    b.HasOne("WorkMateBE.Models.Employee", "Employee")
+                        .WithMany()
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Employee");
+                });
+
+            modelBuilder.Entity("WorkMateBE.Models.Salary", b =>
+                {
+                    b.HasOne("WorkMateBE.Models.Employee", "Employee")
+                        .WithMany()
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Employee");
                 });
 #pragma warning restore 612, 618
         }

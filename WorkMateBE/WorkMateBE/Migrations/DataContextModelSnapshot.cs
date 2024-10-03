@@ -144,7 +144,7 @@ namespace WorkMateBE.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int>("status")
+                    b.Property<int>("Status")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
