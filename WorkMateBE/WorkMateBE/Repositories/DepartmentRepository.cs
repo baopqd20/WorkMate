@@ -42,7 +42,6 @@ namespace WorkMateBE.Repositories
         public bool UpdateDepartment(int departmentId, Department departmentUpdate)
         {
             var department = _context.Departments.Where(p => p.Id == departmentId).FirstOrDefault();
-            department.Id = departmentUpdate.Id;
             department.Name = departmentUpdate.Name;
             department.Description = departmentUpdate.Description;
             department.Status = departmentUpdate.Status;

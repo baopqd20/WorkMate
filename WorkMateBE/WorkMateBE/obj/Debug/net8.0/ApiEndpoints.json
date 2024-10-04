@@ -18,8 +18,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "department",
-        "Type": "WorkMateBE.Models.Department",
+        "Name": "departmentDto",
+        "Type": "WorkMateBE.Dtos.DepartmentDto.DepartmentCreateDto",
         "IsRequired": true
       }
     ],
@@ -55,8 +55,8 @@
         "IsRequired": true
       },
       {
-        "Name": "department",
-        "Type": "WorkMateBE.Models.Department",
+        "Name": "departmentDto",
+        "Type": "WorkMateBE.Dtos.DepartmentDto.DepartmentCreateDto",
         "IsRequired": true
       }
     ],

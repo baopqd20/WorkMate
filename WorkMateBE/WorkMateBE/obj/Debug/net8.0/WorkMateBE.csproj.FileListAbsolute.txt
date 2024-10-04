@@ -239,3 +239,4 @@ D:\WorkMate\WorkMateBE\WorkMateBE\obj\Debug\net8.0\refint\WorkMateBE.dll
 D:\WorkMate\WorkMateBE\WorkMateBE\obj\Debug\net8.0\WorkMateBE.pdb
 D:\WorkMate\WorkMateBE\WorkMateBE\obj\Debug\net8.0\WorkMateBE.genruntimeconfig.cache
 D:\WorkMate\WorkMateBE\WorkMateBE\obj\Debug\net8.0\ref\WorkMateBE.dll
+D:\WorkMate\WorkMateBE\WorkMateBE\bin\Debug\net8.0\AutoMapper.dll
